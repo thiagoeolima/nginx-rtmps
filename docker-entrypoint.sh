@@ -16,9 +16,6 @@ else
    sed -i 's|#facebook| |g' /etc/nginx/nginx.conf 
 fi
 
-cat /etc/nginx/nginx.conf 
-
-	exit 1;
 stunnel4
 
 exec "$@"
