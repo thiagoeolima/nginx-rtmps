@@ -13,7 +13,14 @@ if [ -n "${FACEBOOK_KEY}" ]; then
 	echo "Facebook activate."
 	sed -i 's|#facebook|push '"$FACEBOOK_URL""$FACEBOOK_KEY"';|g' /etc/nginx/nginx.conf 
 else 
-   sed -i 's|#facebook| |g' /etc/nginx/nginx.conf 
+    sed -i 's|#facebook| |g' /etc/nginx/nginx.conf 
+fi
+
+if [ -n "${INSTAGRAM_KEY}" ]; then
+	echo "Instagram activate."
+	sed -i 's|#instagram|push '"$INSTAGRAM_URL""$INSTAGRAM_KEY"';|g' /etc/nginx/nginx.conf 
+else 
+    sed -i 's|#instagram| |g' /etc/nginx/nginx.conf 
 fi
 
 stunnel4

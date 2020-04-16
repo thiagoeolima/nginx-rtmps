@@ -57,14 +57,24 @@ RUN mkdir -p  /etc/stunnel/conf.d
 # Set up config file 
 COPY stunnel/stunnel.conf /etc/stunnel/stunnel.conf
 COPY stunnel/stunnel4 /etc/default/stunnel4
-#
+
+#Facebook Stunnel Port 19350
 COPY stunnel/fb.conf /etc/stunnel/conf.d/fb.conf
 
+#Instagram Stunnel Port 19351
+COPY stunnel/instagram.conf /etc/stunnel/conf.d/instagram.conf
+
+#Youtube
 ENV YOUTUBE_URL rtmp://a.rtmp.youtube.com/live2/
 ENV YOUTUBE_KEY ""
 
+#Facebook
 ENV FACEBOOK_URL rtmp://127.0.0.1:19350/rtmp/
 ENV FACEBOOK_KEY ""
+
+#Instagram
+ENV INSTAGRAM_URL rtmp://127.0.0.1:19351/rtmp/
+ENV INSTAGRAM_KEY ""
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
