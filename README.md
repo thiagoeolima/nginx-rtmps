@@ -34,8 +34,26 @@ The main purpose (and test case) to build it was to allow streaming from
 docker run -d -p 1935:1935 --name nginx-rtmps thiagoeolima/nginx-rtmps
 ```
 
-* Facebook,Instagram and Youtube:
+* Facebook and Youtube:
 
 ```bash
-docker run -p 1935:1935 -e FACEBOOK_KEY=<key> -e YOUTUBE_KEY=<key> -e INSTAGRAM_KEY=<key> thiagoeolima/nginx-rtmps
+docker run -p 1935:1935 -e FACEBOOK_KEY=<key> -e YOUTUBE_KEY=<key> thiagoeolima/nginx-rtmps
+```
+
+* OBS
+
+```bash
+rtmp://localhost:1935/live
+```
+
+* Instagram:
+
+```bash
+docker run -p 1935:1935 -e INSTAGRAM_KEY=<key> thiagoeolima/nginx-rtmps
+```
+
+* OBS
+
+```bash
+rtmp://localhost:1935/instagram
 ```
