@@ -11,14 +11,14 @@ rtmp {
         application live {
             live on;
             record off;
-	    #push rtmp://a.rtmp.youtube.com/live2/<key>;
-	    #push rtmp://127.0.0.1:19350/rtmp/<key>;
+            #facebook
+            #youtube
         }
         
         application instagram {
             live on;
             record off;
-            #push rtmp://127.0.0.1:19351/rtmp/<key>;
+            #instagram
         }
 
     }

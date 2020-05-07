@@ -3,12 +3,12 @@ FROM buildpack-deps:stretch
 LABEL maintainer="Thiago Lima <contact@thiagoemmanuel.com>"
 
 # Versions of Nginx and nginx-rtmp-module to use
-ENV NGINX_VERSION nginx-1.16.1
+ENV NGINX_VERSION nginx-1.18.0
 ENV NGINX_RTMP_MODULE_VERSION 1.2.1
 
-# Install dependencies
+# Install dependencies Stunnel4
 RUN apt-get update && \
-    apt-get install -y ca-certificates openssl libssl-dev stunnel4 && \
+    apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and decompress Nginx
@@ -50,6 +50,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Set up config file
+COPY nginx/nginx.conf.template /etc/nginx/nginx.conf.template
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Config Stunnel
@@ -75,6 +76,8 @@ ENV FACEBOOK_KEY ""
 #Instagram
 ENV INSTAGRAM_URL rtmp://127.0.0.1:19351/rtmp/
 ENV INSTAGRAM_KEY ""
+
+ENV DEBUG ""
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
