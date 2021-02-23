@@ -22,6 +22,14 @@ else
 	sed -i 's|#facebook| |g' $NGINX_TEMPLATE
 fi
 
+if [ -n "${TWITCH_KEY}" ]; then
+	echo "Twitch activate."
+	sed -i 's|#twitch|push '"$TWITCH_URL"'${TWITCH_KEY};|g' $NGINX_TEMPLATE
+	ENV_OK=1
+else 
+	sed -i 's|#twitch| |g' $NGINX_TEMPLATE
+fi
+
 if [ -n "${INSTAGRAM_KEY}" ]; then
 	echo "Instagram activate."
 	sed -i 's|#instagram|push '"$INSTAGRAM_URL"'${INSTAGRAM_KEY};|g' $NGINX_TEMPLATE
