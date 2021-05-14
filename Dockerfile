@@ -77,6 +77,9 @@ ENV FACEBOOK_KEY ""
 ENV INSTAGRAM_URL rtmp://127.0.0.1:19351/rtmp/
 ENV INSTAGRAM_KEY ""
 
+ENV TWITCH_URL rtmp://mil.contribute.live-video.net/app/
+ENV TWITCH_KEY ""
+
 ENV DEBUG ""
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh

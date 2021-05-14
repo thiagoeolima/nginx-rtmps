@@ -13,6 +13,7 @@ rtmp {
             record off;
             #facebook
             #youtube
+            #twitch
         }
         
         application instagram {
