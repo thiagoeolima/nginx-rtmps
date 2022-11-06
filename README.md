@@ -40,6 +40,12 @@ docker run -it -p 1935:1935 --name nginx-rtmps thiagoeolima/nginx-rtmps
 docker run -it -p 1935:1935 -e FACEBOOK_KEY="<key>" -e YOUTUBE_KEY=<key> thiagoeolima/nginx-rtmps
 ```
 
+* Cloudflare:
+
+```bash
+docker run -it -p 1935:1935 -e CLOUDFLARE_KEY="<key>" thiagoeolima/nginx-rtmps
+```
+
 * OBS
 
 ```bash
@@ -110,6 +116,7 @@ rtmp {
             record off;
 	    #push rtmp://a.rtmp.youtube.com/live2/<key>;
 	    #push rtmp://127.0.0.1:19350/rtmp/<key>;
+	    #push rtmp://127.0.0.1:19352/live/<key>;
         }
         
         application instagram {
