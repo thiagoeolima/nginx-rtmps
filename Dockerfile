@@ -65,6 +65,9 @@ COPY stunnel/fb.conf /etc/stunnel/conf.d/fb.conf
 #Instagram Stunnel Port 19351
 COPY stunnel/instagram.conf /etc/stunnel/conf.d/instagram.conf
 
+#Cloudflare Stunnel Port 19352
+COPY stunnel/cloudflare.conf /etc/stunnel/conf.d/cloudflare.conf
+
 #Youtube
 ENV YOUTUBE_URL rtmp://a.rtmp.youtube.com/live2/
 ENV YOUTUBE_KEY ""
@@ -76,6 +79,10 @@ ENV FACEBOOK_KEY ""
 #Instagram
 ENV INSTAGRAM_URL rtmp://127.0.0.1:19351/rtmp/
 ENV INSTAGRAM_KEY ""
+
+#Cloudflare
+ENV CLOUDFLARE_URL rtmp://127.0.0.1:19352/live/
+ENV CLOUDFLARE_KEY ""
 
 ENV DEBUG ""
 
