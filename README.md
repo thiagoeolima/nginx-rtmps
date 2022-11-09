@@ -46,6 +46,12 @@ docker run -it -p 1935:1935 -e FACEBOOK_KEY="<key>" -e YOUTUBE_KEY=<key> thiagoe
 docker run -it -p 1935:1935 -e CLOUDFLARE_KEY="<key>" thiagoeolima/nginx-rtmps
 ```
 
+* Twitch:
+
+```bash
+docker run -it -p 1935:1935 -e TWITCH_URL="rtmp://<url>" -e TWITCH_KEY="<key>" thiagoeolima/nginx-rtmps
+```
+
 * OBS
 
 ```bash

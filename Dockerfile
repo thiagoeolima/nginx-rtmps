@@ -60,7 +60,7 @@ COPY stunnel/stunnel.conf /etc/stunnel/stunnel.conf
 COPY stunnel/stunnel4 /etc/default/stunnel4
 
 #Facebook Stunnel Port 19350
-COPY stunnel/fb.conf /etc/stunnel/conf.d/fb.conf
+COPY stunnel/facebook.conf /etc/stunnel/conf.d/facebook.conf
 
 #Instagram Stunnel Port 19351
 COPY stunnel/instagram.conf /etc/stunnel/conf.d/instagram.conf
@@ -83,6 +83,10 @@ ENV INSTAGRAM_KEY ""
 #Cloudflare
 ENV CLOUDFLARE_URL rtmp://127.0.0.1:19352/live/
 ENV CLOUDFLARE_KEY ""
+
+#Twitch
+ENV TWITCH_URL ""
+ENV TWITCH_KEY ""
 
 ENV DEBUG ""
 
