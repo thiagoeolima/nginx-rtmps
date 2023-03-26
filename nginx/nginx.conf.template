@@ -15,6 +15,7 @@ rtmp {
             #youtube
             #cloudflare
             #twitch
+            #kick
         }
         
         application instagram {

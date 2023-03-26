@@ -97,7 +97,7 @@ rtmp://localhost:1935/instagram
 If something is not working you can check the logs of the container with:
 
 ```bash
-docker logs nginx-rtmp
+docker logs nginx-rtmps
 ```
 
 ## Extending
