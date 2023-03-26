@@ -68,6 +68,9 @@ COPY stunnel/instagram.conf /etc/stunnel/conf.d/instagram.conf
 #Cloudflare Stunnel Port 19352
 COPY stunnel/cloudflare.conf /etc/stunnel/conf.d/cloudflare.conf
 
+#Kick Stunnel Port 19353
+COPY stunnel/kick.conf /etc/stunnel/conf.d/kick.conf
+
 #Youtube
 ENV YOUTUBE_URL rtmp://a.rtmp.youtube.com/live2/
 ENV YOUTUBE_KEY ""
@@ -87,6 +90,10 @@ ENV CLOUDFLARE_KEY ""
 #Twitch
 ENV TWITCH_URL ""
 ENV TWITCH_KEY ""
+
+#Kick
+ENV KICK_URL rtmp://127.0.0.1:19353/kick/
+ENV KICK_KEY ""
 
 ENV DEBUG ""
 
