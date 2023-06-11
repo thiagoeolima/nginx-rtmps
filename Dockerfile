@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch
+FROM buildpack-deps:bullseye
 
 LABEL maintainer="Thiago Lima <contact@thiagoemmanuel.com>"
 
@@ -40,7 +40,7 @@ RUN cd /tmp/build/nginx/${NGINX_VERSION} && \
         --with-threads \
         --with-ipv6 \
         --add-module=/tmp/build/nginx-rtmp-module/nginx-rtmp-module-${NGINX_RTMP_MODULE_VERSION} && \
-    make -j $(getconf _NPROCESSORS_ONLN) && \
+    make -j $(getconf _NPROCESSORS_ONLN) CFLAGS="-Wno-error" && \
     make install && \
     mkdir /var/lock/nginx && \
     rm -rf /tmp/build
